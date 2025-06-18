@@ -1,58 +1,178 @@
 {
-  "copy-knight": [
-    {
-      "question": "The Guild of Golden Quills tasks you with forging ad headlines for a merchant. Which ancient structure shall you inscribe into your prompt to best awaken the AI’s craft?",
-      "options": [
-        "A single rune, whispered without meaning",
-        "A vague incantation: “Write something nice”",
-        "Three sacred elements: headline samples, tone, and product lore",
-        "A chaotic chant of unbound keywords"
-      ],
-      "correct": 2
-    },
-    {
-      "question": "The Owl Scribes ask you to complete this sacred invocation to summon email subject lines that stir the soul:\n\"Act as a master copywriter. Write 5 subject lines that are...\"",
-      "options": [
-        "Woven in endless poetic riddles",
-        "Cloaked in mystery and trickery",
-        "Sharpened with clarity, urgency, and the voice of the brand",
-        "Cast blindly, without runes or rules"
-      ],
-      "correct": 2
-    },
-    {
-      "question": "You chanted: “Write an ad.” The Echo returned dull and empty phrases. What spell must you alter to awaken the true words of persuasion?",
-      "options": [
-        "Add context, the audience’s essence, tone, and sacred format",
-        "Whisper fewer words into the void",
-        "Let the AI divine your true intent",
-        "Adorn the chant with sparkling emojis"
-      ],
-      "correct": 0
-    },
-    {
-      "question": "To charm the spirits of wit and friendliness, which invocation shall you cast upon the prompt stone?",
-      "options": [
-        "“Write promotional text.”",
-        "“You are a clever and cheerful bard. Compose a friendly, witty ode to our wares.”",
-        "“Write a text about our product.”",
-        "“Summon 100 glyphs of speech.”"
-      ],
-      "correct": 1
-    },
-    {
-      "question": "The Runeforge awaits your instruction to craft enchanted CTA buttons. What must your incantation contain to shape them well?",
-      "options": [
-        "Leave it vague, let fate decide",
-        "Use action runes, tone crystals, a limit of characters, and a clear target",
-        "Chant only of SEO legends",
-        "Summon 50 nameless spells and hope for the best"
-      ],
-      "correct": 1
-    },
-    {
-      "question": "The Echo Warden looms above the Tower of Copy. He challenges you:\n\n\"Many invoke me, but few command me.\nI shape actions through words, and move hearts with brevity.\nWithout me, all calls fall silent. What am I?\"",
-      "answer": "call to action"
-    }
-  ]
+  "copy-knight": {
+    "1": [
+      {
+        "question": "The scroll speaks, but not clearly. What should the first stroke of your quill ensure?",
+        "options": ["A catchy tone", "A clear objective", "Fancy words", "An image-rich metaphor"],
+        "correct": 1
+      },
+      {
+        "question": "The client whispers their desire. What must the copy-knight demand before writing a single rune?",
+        "options": ["A keyword list", "A creative brief", "A logo design", "An ad budget"],
+        "correct": 1
+      },
+      {
+        "question": "The forest of prompts is dense. Which compass points your words to clarity?",
+        "options": ["Grammar rules", "Few-shot examples", "A title generator", "Passive voice"],
+        "correct": 1
+      },
+      {
+        "question": "A prompt without context is like a ship without sails. What must the wise scribe provide?",
+        "options": ["Call to action", "Meta description", "Background info", "Formatting tips"],
+        "correct": 2
+      },
+      {
+        "question": "A sorcerer asks for persuasive magic. What must the prompt include?",
+        "options": ["Conversion intent", "Image references", "Character names", "Random keywords"],
+        "correct": 0
+      },
+      {
+        "question": "A copy-knight is lost in jargon. What breaks the spell?",
+        "options": ["SEO stuffing", "User-friendly tone", "Exclamation overuse", "Alliteration"],
+        "correct": 1
+      }
+    ],
+    "2": [
+      {
+        "question": "The guildmaster demands variants! What should a prompt request for creative diversity?",
+        "options": ["One perfect CTA", "Several tone options", "A fixed structure", "Synonyms only"],
+        "correct": 1
+      },
+      {
+        "question": "In the Hall of Headlines, what ensures your prompt crafts powerful titles?",
+        "options": ["Word count", "Headline formula", "Random adjectives", "Passive mood"],
+        "correct": 1
+      },
+      {
+        "question": "Your client desires urgency. What must you embed within your prompt?",
+        "options": ["Emojis", "Scarcity and CTA", "Short paragraphs", "Background music"],
+        "correct": 1
+      },
+      {
+        "question": "What prompt instruction helps the AI mimic the style of past scrolls?",
+        "options": ["Copy the layout", "Refer to previous examples", "Ignore the brief", "Change the format"],
+        "correct": 1
+      },
+      {
+        "question": "Which of these phrases would be best to instruct the AI to 'sell with flair'?",
+        "options": ["“Use bullet points”", "“Explain the product”", "“Persuade a hesitant buyer”", "“Translate this”"],
+        "correct": 2
+      },
+      {
+        "question": "A knight faces two dragons: Boring and Confusing. What defeats both?",
+        "options": ["Fluff", "Rhymes", "Clear benefit-driven prompts", "Puns"],
+        "correct": 2
+      }
+    ],
+    "3": [
+      {
+        "question": "You must teach a page to whisper like a bard. What prompt command do you give?",
+        "options": ["Use formal academic tone", "Be poetic and persuasive", "Add hashtags", "Include legal disclaimers"],
+        "correct": 1
+      },
+      {
+        "question": "Which of these instructions brings forth a social post with rhythm and charm?",
+        "options": ["“Summarize this quickly”", "“Write a LinkedIn post with a punchy hook”", "“Make a list”", "“Provide a translation”"],
+        "correct": 1
+      },
+      {
+        "question": "You seek emotional resonance in your copy. What style must you request?",
+        "options": ["Corporate", "Dry and direct", "Empathic and relatable", "Buzzword-heavy"],
+        "correct": 2
+      },
+      {
+        "question": "A scroll begins with silence. What line opens the gate to attention?",
+        "options": ["“Once upon a time…”", "“Our product is great”", "“Struggling to stay focused?”", "“This is an email”"],
+        "correct": 2
+      },
+      {
+        "question": "What makes a product description scroll shine brighter?",
+        "options": ["List of features", "Call-to-action only", "Benefits and emotional pull", "Price only"],
+        "correct": 2
+      },
+      {
+        "question": "The scroll ends soon. What phrase helps close the deal?",
+        "options": ["Contact us for more info", "Buy now before midnight", "Product spec sheet", "See terms & conditions"],
+        "correct": 1
+      }
+    ],
+    "4": [
+      {
+        "question": "The ghost of Conversion Past asks: what turns curiosity into action?",
+        "options": ["Unclear goals", "Storytelling with CTA", "Wall of text", "Ambiguous pricing"],
+        "correct": 1
+      },
+      {
+        "question": "You're tasked with turning specs into seduction. What prompt helps?",
+        "options": ["Write technical details only", "Make the features emotional", "List every measurement", "Use all caps"],
+        "correct": 1
+      },
+      {
+        "question": "An AI scroll falls flat. What essential ingredient did the prompt lack?",
+        "options": ["Length", "Audience context", "Keywords", "A subtitle"],
+        "correct": 1
+      },
+      {
+        "question": "Your client wants virality. Which prompt addition helps?",
+        "options": ["Add a trending hook", "Describe it fully", "Limit words", "Add legal disclaimers"],
+        "correct": 0
+      },
+      {
+        "question": "The scroll must feel human. What instruction gives it breath?",
+        "options": ["Write like a lawyer", "Inject personality and flaws", "Use GPT default", "List pros only"],
+        "correct": 1
+      },
+      {
+        "question": "The prompt must generate urgency. What do you add?",
+        "options": ["Include a sense of scarcity", "Make it vague", "Use polite tone", "Skip the CTA"],
+        "correct": 0
+      }
+    ],
+    "5": [
+      {
+        "question": "The final client scroll demands trust. What builds it best?",
+        "options": ["Testimonials and social proof", "Big claims", "Fancy language", "Clickbait"],
+        "correct": 0
+      },
+      {
+        "question": "You enter the Hall of Headlines. Which phrase brings readers in?",
+        "options": ["Why this matters to you", "Best newsletter 2021", "Read me", "Hello there"],
+        "correct": 0
+      },
+      {
+        "question": "What prompt element adds rhythm and flow to persuasive copy?",
+        "options": ["Call-to-action", "Alliteration and cadence", "Title case", "Data dump"],
+        "correct": 1
+      },
+      {
+        "question": "The scroll must convert. Which prompt helps best?",
+        "options": ["“Add bullet points”", "“Persuade a skeptical customer to act now”", "“Explain the features”", "“Make it 300 words”"],
+        "correct": 1
+      },
+      {
+        "question": "You're asked to enchant Gen Z. What prompt trick works?",
+        "options": ["Speak in memes and emojis", "Avoid humor", "Keep it corporate", "Use Shakespearean tone"],
+        "correct": 0
+      },
+      {
+        "question": "The client wants you to break expectations. What must your prompt allow?",
+        "options": ["Safe templates", "Unusual formats and creativity", "Only standard tone", "Shortened output"],
+        "correct": 1
+      }
+    ],
+    "boss": [
+      {
+        "question": "I seal the fate of scrolls, urging the reader to act. Short, mighty, essential—I close the spell.\nWhat am I?",
+        "answers": ["call to action", "cta", "call‑to‑action"]
+      },
+      {
+        "question": "I shape the voice of your scroll. Sometimes witty, sometimes solemn—I give life to your words.\nWhat am I?",
+        "answers": ["tone", "voice"]
+      },
+      {
+        "question": "I provide the path, the purpose, the goal. Without me, even the best quill falters.\nWhat am I?",
+        "answers": ["brief", "creative brief", "prompt brief", "copy brief"]
+      }
+    ]
+  }
 }
