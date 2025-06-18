@@ -4,160 +4,190 @@
       {
         "question": "The scroll speaks, but not clearly. What should the first stroke of your quill ensure?",
         "options": ["A catchy tone", "A clear objective", "Fancy words", "An image-rich metaphor"],
-        "correct": 1
+        "correct": 1,
+        "hint": "A prompt without a goal is like a sword without a hilt."
       },
       {
         "question": "The client whispers their desire. What must the copy-knight demand before writing a single rune?",
         "options": ["A keyword list", "A creative brief", "A logo design", "An ad budget"],
-        "correct": 1
+        "correct": 1,
+        "hint": "Every great scroll begins with a clear request from the summoner."
       },
       {
         "question": "The forest of prompts is dense. Which compass points your words to clarity?",
         "options": ["Grammar rules", "Few-shot examples", "A title generator", "Passive voice"],
-        "correct": 1
+        "correct": 1,
+        "hint": "Show the way by showing the how."
       },
       {
         "question": "A prompt without context is like a ship without sails. What must the wise scribe provide?",
         "options": ["Call to action", "Meta description", "Background info", "Formatting tips"],
-        "correct": 2
+        "correct": 2,
+        "hint": "Even the strongest spell fails without knowing the battlefield."
       },
       {
         "question": "A sorcerer asks for persuasive magic. What must the prompt include?",
         "options": ["Conversion intent", "Image references", "Character names", "Random keywords"],
-        "correct": 0
+        "correct": 0,
+        "hint": "Persuasion begins with intent, not decoration."
       },
       {
         "question": "A copy-knight is lost in jargon. What breaks the spell?",
         "options": ["SEO stuffing", "User-friendly tone", "Exclamation overuse", "Alliteration"],
-        "correct": 1
+        "correct": 1,
+        "hint": "Speak as the villagers do, not as the court poet."
       }
     ],
     "2": [
       {
         "question": "The guildmaster demands variants! What should a prompt request for creative diversity?",
         "options": ["One perfect CTA", "Several tone options", "A fixed structure", "Synonyms only"],
-        "correct": 1
+        "correct": 1,
+        "hint": "One voice may be right, but many voices echo further."
       },
       {
         "question": "In the Hall of Headlines, what ensures your prompt crafts powerful titles?",
         "options": ["Word count", "Headline formula", "Random adjectives", "Passive mood"],
-        "correct": 1
+        "correct": 1,
+        "hint": "Even dragons follow scrolls that promise treasure."
       },
       {
         "question": "Your client desires urgency. What must you embed within your prompt?",
         "options": ["Emojis", "Scarcity and CTA", "Short paragraphs", "Background music"],
-        "correct": 1
+        "correct": 1,
+        "hint": "Fear of missing out is the oldest form of magic."
       },
       {
         "question": "What prompt instruction helps the AI mimic the style of past scrolls?",
         "options": ["Copy the layout", "Refer to previous examples", "Ignore the brief", "Change the format"],
-        "correct": 1
+        "correct": 1,
+        "hint": "History is the greatest teacher of tone."
       },
       {
         "question": "Which of these phrases would be best to instruct the AI to 'sell with flair'?",
         "options": ["“Use bullet points”", "“Explain the product”", "“Persuade a hesitant buyer”", "“Translate this”"],
-        "correct": 2
+        "correct": 2,
+        "hint": "You're not just informing, you're charming."
       },
       {
         "question": "A knight faces two dragons: Boring and Confusing. What defeats both?",
         "options": ["Fluff", "Rhymes", "Clear benefit-driven prompts", "Puns"],
-        "correct": 2
+        "correct": 2,
+        "hint": "Clarity with purpose strikes true."
       }
     ],
     "3": [
       {
         "question": "You must teach a page to whisper like a bard. What prompt command do you give?",
         "options": ["Use formal academic tone", "Be poetic and persuasive", "Add hashtags", "Include legal disclaimers"],
-        "correct": 1
+        "correct": 1,
+        "hint": "The voice of a bard is both sweet and sharp."
       },
       {
         "question": "Which of these instructions brings forth a social post with rhythm and charm?",
         "options": ["“Summarize this quickly”", "“Write a LinkedIn post with a punchy hook”", "“Make a list”", "“Provide a translation”"],
-        "correct": 1
+        "correct": 1,
+        "hint": "A hook catches more than just fish—it captures attention."
       },
       {
         "question": "You seek emotional resonance in your copy. What style must you request?",
         "options": ["Corporate", "Dry and direct", "Empathic and relatable", "Buzzword-heavy"],
-        "correct": 2
+        "correct": 2,
+        "hint": "If your heart doesn’t stir, neither will the reader’s."
       },
       {
         "question": "A scroll begins with silence. What line opens the gate to attention?",
         "options": ["“Once upon a time…”", "“Our product is great”", "“Struggling to stay focused?”", "“This is an email”"],
-        "correct": 2
+        "correct": 2,
+        "hint": "Relate first, persuade second."
       },
       {
         "question": "What makes a product description scroll shine brighter?",
         "options": ["List of features", "Call-to-action only", "Benefits and emotional pull", "Price only"],
-        "correct": 2
+        "correct": 2,
+        "hint": "Show not just what it is, but why it matters."
       },
       {
         "question": "The scroll ends soon. What phrase helps close the deal?",
         "options": ["Contact us for more info", "Buy now before midnight", "Product spec sheet", "See terms & conditions"],
-        "correct": 1
+        "correct": 1,
+        "hint": "Nothing moves a crowd like the ticking of time."
       }
     ],
     "4": [
       {
         "question": "The ghost of Conversion Past asks: what turns curiosity into action?",
         "options": ["Unclear goals", "Storytelling with CTA", "Wall of text", "Ambiguous pricing"],
-        "correct": 1
+        "correct": 1,
+        "hint": "The tale must end with a leap, not a lull."
       },
       {
         "question": "You're tasked with turning specs into seduction. What prompt helps?",
         "options": ["Write technical details only", "Make the features emotional", "List every measurement", "Use all caps"],
-        "correct": 1
+        "correct": 1,
+        "hint": "Even armor is beautiful when forged with feeling."
       },
       {
         "question": "An AI scroll falls flat. What essential ingredient did the prompt lack?",
         "options": ["Length", "Audience context", "Keywords", "A subtitle"],
-        "correct": 1
+        "correct": 1,
+        "hint": "A story without a listener is just noise."
       },
       {
         "question": "Your client wants virality. Which prompt addition helps?",
         "options": ["Add a trending hook", "Describe it fully", "Limit words", "Add legal disclaimers"],
-        "correct": 0
+        "correct": 0,
+        "hint": "Trends are the wind—ride it well."
       },
       {
         "question": "The scroll must feel human. What instruction gives it breath?",
         "options": ["Write like a lawyer", "Inject personality and flaws", "Use GPT default", "List pros only"],
-        "correct": 1
+        "correct": 1,
+        "hint": "Even perfection needs imperfection to be real."
       },
       {
         "question": "The prompt must generate urgency. What do you add?",
         "options": ["Include a sense of scarcity", "Make it vague", "Use polite tone", "Skip the CTA"],
-        "correct": 0
+        "correct": 0,
+        "hint": "The flame of urgency burns hottest when wood is scarce."
       }
     ],
     "5": [
       {
         "question": "The final client scroll demands trust. What builds it best?",
         "options": ["Testimonials and social proof", "Big claims", "Fancy language", "Clickbait"],
-        "correct": 0
+        "correct": 0,
+        "hint": "Trust is earned, not conjured."
       },
       {
         "question": "You enter the Hall of Headlines. Which phrase brings readers in?",
         "options": ["Why this matters to you", "Best newsletter 2021", "Read me", "Hello there"],
-        "correct": 0
+        "correct": 0,
+        "hint": "Relevance rings truer than trumpet calls."
       },
       {
         "question": "What prompt element adds rhythm and flow to persuasive copy?",
         "options": ["Call-to-action", "Alliteration and cadence", "Title case", "Data dump"],
-        "correct": 1
+        "correct": 1,
+        "hint": "Words dance when their steps are timed."
       },
       {
         "question": "The scroll must convert. Which prompt helps best?",
         "options": ["“Add bullet points”", "“Persuade a skeptical customer to act now”", "“Explain the features”", "“Make it 300 words”"],
-        "correct": 1
+        "correct": 1,
+        "hint": "Overcome doubt with confidence and clarity."
       },
       {
         "question": "You're asked to enchant Gen Z. What prompt trick works?",
         "options": ["Speak in memes and emojis", "Avoid humor", "Keep it corporate", "Use Shakespearean tone"],
-        "correct": 0
+        "correct": 0,
+        "hint": "Speak their tongue, lest they scroll past in silence."
       },
       {
         "question": "The client wants you to break expectations. What must your prompt allow?",
         "options": ["Safe templates", "Unusual formats and creativity", "Only standard tone", "Shortened output"],
-        "correct": 1
+        "correct": 1,
+        "hint": "The unexpected casts the longest spell."
       }
     ],
     "boss": [
