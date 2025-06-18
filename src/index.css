@@ -57,4 +57,19 @@
   animation: epic-glow 2s infinite;
 }
 
+@keyframes breathing {
+  0%, 100% {
+    transform: translateY(0) scaleY(1);
+  }
+  50% {
+    transform: translateY(-1px) scaleY(1.02);
+  }
+}
+
+.sprite-idle {
+  animation: breathing 2.2s ease-in-out infinite;
+  transform-origin: bottom center;
+}
+
+
 
