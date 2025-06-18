@@ -64,10 +64,9 @@ export default function ChapterPage() {
   }
 
   const handleInputSubmit = () => {
-    const lower = input.toLowerCase().replace(/[^a-zA-Z]/g, "").trim()
-    const acceptable = ["fewshots", "fewshot", "few shots", "few shot"]
-
-    const isAccepted = acceptable.some((variant) => lower.includes(variant.replace(/\s/g, "")))
+    const normalized = input.toLowerCase().replace(/[^a-z]/g, "").trim()
+    const accepted = chapter1.bossAnswerAccepted.map(ans => ans.replace(/[^a-z]/g, ""))
+    const isAccepted = accepted.includes(normalized)
 
     if (input.trim().length < 5) {
       setFeedback("❌ Your answer is far too vague, adventurer.")
