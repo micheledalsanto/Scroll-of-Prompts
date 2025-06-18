@@ -116,7 +116,7 @@ export default function ChapterPage() {
         {step === 6 ? (
           <>
             <div className="flex items-center justify-center gap-10 mb-10">
-              <img src={spriteClass} alt="hero" className="w-24 h-24" />
+              <img src={spriteClass} alt="hero" className="w-24 h-24 animate-breathing origin-bottom" />
               <img src={spriteBoss} alt="boss" className="w-24 h-24" />
             </div>
 
@@ -141,7 +141,7 @@ export default function ChapterPage() {
           </>
         ) : questionData ? (
           <>
-            <img src={spriteClass} alt="hero" className="w-16 h-16 mb-6 mx-auto" />
+            <img src={spriteClass} alt="hero" className="w-16 h-16 mb-6 mx-auto animate-breathing origin-bottom" />
             <p className="mb-6 text-green-300 italic">{questionData.question}</p>
             <div className="space-y-3 mb-6">
               {questionData.options.map((opt, idx) => (
