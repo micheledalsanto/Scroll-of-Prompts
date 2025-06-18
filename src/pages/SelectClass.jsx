@@ -2,11 +2,41 @@ import { useNavigate } from "react-router-dom"
 import Layout from "../components/Layout"
 
 const classes = [
-  { id: "copy-knight", name: "Copy Knight", icon: "🛡️", description: "Master of persuasive prompts and ad copy" },
-  { id: "code-mage", name: "Code Mage", icon: "🧠", description: "Wields powerful code-generating incantations" },
-  { id: "knowledge-seeker", name: "Knowledge Seeker", icon: "📚", description: "Explains the world one prompt at a time" },
-  { id: "logic-paladin", name: "Logic Paladin", icon: "⚖️", description: "Defends truth with structured logic" },
-  { id: "imaginarium", name: "Imaginarium", icon: "🎨", description: "Turns dreams into stories with prompts" },
+  {
+    id: "copy-knight",
+    name: "Copy Knight",
+    icon: "🛡️",
+    description: "Master of persuasive prompts and ad copy",
+    available: true,
+  },
+  {
+    id: "code-mage",
+    name: "Code Mage",
+    icon: "🧠",
+    description: "🔒 The runes of code are still being forged. Return when the circuits hum with magic…",
+    available: false,
+  },
+  {
+    id: "knowledge-seeker",
+    name: "Knowledge Seeker",
+    icon: "📚",
+    description: "🔒 The Grand Library remains sealed. Only when the stars realign shall its secrets be revealed…",
+    available: false,
+  },
+  {
+    id: "logic-paladin",
+    name: "Logic Paladin",
+    icon: "⚖️",
+    description: "🔒 The Order of Logic awaits your oath. Soon, you shall uphold reason with your blade of clarity…",
+    available: false,
+  },
+  {
+    id: "imaginarium",
+    name: "Imaginarium",
+    icon: "🎨",
+    description: "🔒 The Dreamforge sleeps. When imagination bursts into flames once more, your path shall appear…",
+    available: false,
+  },
 ]
 
 export default function SelectClass() {
@@ -31,8 +61,13 @@ export default function SelectClass() {
           {classes.map((cls) => (
             <button
               key={cls.id}
-              className="border-2 border-green-500 p-6 rounded text-left hover:bg-green-700 transition space-y-2"
+              disabled={!cls.available}
               onClick={() => handleSelect(cls.id)}
+              className={`border-2 p-6 rounded text-left transition space-y-2 ${
+                cls.available
+                  ? "border-green-500 hover:bg-green-700"
+                  : "border-gray-600 bg-black text-gray-500 cursor-not-allowed"
+              }`}
             >
               <div className="text-3xl">{cls.icon}</div>
               <div className="text-lg font-bold tracking-wide">{cls.name}</div>
