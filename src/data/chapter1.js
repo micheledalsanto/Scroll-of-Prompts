@@ -2,7 +2,7 @@ const chapter1 = {
   name: "Chapter I: The Lost Archives",
   lore: "In the depths of the Digital Catacombs lies a tome that whispers secrets only the worthy may hear. Brave the trials, and confront the guardian of forgotten prompts.",
   bossName: "The Echo Warden",
-  bossQuestion: `The Echo Warden looms above the Tower of Copy. He challenges you:\n\n"Many invoke me, but few command me.\nI shape actions through words, and move hearts with brevity.\nWithout me, all calls fall silent. What am I?"`,
+  bossQuestion: `I am the spark behind every click, the voice that calls with few but mighty words.\nI urge the reader to act — to buy, to join, to explore.\nWithout me, your copy is but a whisper in the wind.\nWhat am I?`,
   bossAnswerAccepted: [
     "call to action",
     "call‑to‑action",
