@@ -29,35 +29,101 @@ export default function ChapterPage() {
       const normCls = cls.toLowerCase().replace(/\s+/g, "_")
       setSelectedClass(normCls)
 
-      const challenges = challengesByClass[normCls]?.[step.toString()]
-      if (step < 6 && challenges?.length) {
-        const randomChallenge = challenges[Math.floor(Math.random() * challenges.length)]
-        setQuestionData(randomChallenge)
-      } else if (step === 6 && challengesByClass[normCls]?.boss?.length) {
-        const bossChallenge = challengesByClass[normCls].boss[Math.floor(Math.random() * challengesByClass[normCls].boss.length)]
-        setQuestionData(bossChallenge)
+      const completed = completedSteps[step]
+      if (completed?.question) {
+        setQuestionData(completed.question)
+        setSelectedOption(completed.answer ?? null)
+        setIsValid(completed.valid ?? false)
       } else {
-        setQuestionData(null)
+        const challenges = challengesByClass[normCls]?.[step.toString()]
+        if (step < 6 && challenges?.length) {
+          const randomChallenge = challenges[Math.floor(Math.random() * challenges.length)]
+          setQuestionData(randomChallenge)
+          setCompletedSteps((prev) => ({
+            ...prev,
+            [step]: { ...prev[step], question: randomChallenge }
+          }))
+        } else if (step === 6 && challengesByClass[normCls]?.boss?.length) {
+          const bossChallenge = challengesByClass[normCls].boss[Math.floor(Math.random() * challengesByClass[normCls].boss.length)]
+          setQuestionData(bossChallenge)
+          setCompletedSteps((prev) => ({
+            ...prev,
+            [step]: { ...prev[step], question: bossChallenge }
+          }))
+        } else {
+          setQuestionData(null)
+        }
+
+        setSelectedOption(null)
+        setIsValid(false)
       }
 
       setInput("")
       setFeedback("")
-      setSelectedOption(completedSteps[step]?.answer ?? null)
-      setIsValid(completedSteps[step]?.valid ?? false)
       setEliminatedOptions([])
       setShowMerchant(false)
     }
   }, [navigate, step])
 
   const handleOptionSelect = (index) => {
-    if (completedSteps[step] || eliminatedOptions.includes(index)) return
+    if (completedSteps[step]?.valid || eliminatedOptions.includes(index)) return
     setSelectedOption(index)
     const isCorrect = index === questionData.correct
     setFeedback(isCorrect ? "✅ Correct! Wisdom flows through you." : "❌ That is not the answer the elders sought.")
     setIsValid(isCorrect)
-    setCompletedSteps((prev) => ({ ...prev, [step]: { answer: index, valid: isCorrect } }))
+    setCompletedSteps((prev) => ({
+      ...prev,
+      [step]: { ...prev[step], answer: index, valid: isCorrect }
+    }))
     if (isCorrect) setExpPoints((prev) => prev + 1)
   }
+
+  const useHint = () => {
+    if (completedSteps[step]?.valid) {
+      setFeedback("🧙‍♂️ The merchant knows your past and refuses to waste your energy.")
+      return
+    }
+    if (expPoints >= 1 && questionData?.hint) {
+      setFeedback(`🧙‍♂️ Hint: ${questionData.hint}`)
+      setExpPoints((prev) => prev - 1)
+      setShowMerchant(false)
+    }
+  }
+
+  const eliminateTwoOptions = () => {
+    if (completedSteps[step]?.valid) {
+      setFeedback("🧙‍♂️ The merchant knows your past and refuses to waste your energy.")
+      return
+    }
+    if (expPoints >= 3 && questionData) {
+      const incorrects = questionData.options.map((_, i) => i).filter(i => i !== questionData.correct)
+      const toEliminate = incorrects.sort(() => 0.5 - Math.random()).slice(0, 2)
+      setEliminatedOptions(toEliminate)
+      setExpPoints((prev) => prev - 3)
+      setShowMerchant(false)
+    }
+  }
+
+  const revealAnswer = () => {
+    if (completedSteps[step]?.valid) {
+      setFeedback("🧙‍♂️ The merchant knows your past and refuses to waste your energy.")
+      return
+    }
+    if (expPoints >= 5 && step < 6) {
+      setSelectedOption(questionData.correct)
+      setFeedback("✅ The merchant whispers the answer in your ear...")
+      setIsValid(true)
+      setCompletedSteps((prev) => ({
+        ...prev,
+        [step]: { ...prev[step], answer: questionData.correct, valid: true }
+      }))
+      setExpPoints((prev) => prev - 5)
+      setShowMerchant(false)
+    }
+  }
+
+  const spriteClass = `/assets/sprites/${selectedClass}.png`
+  const spriteBoss = `/assets/sprites/echo-warden.png`
 
   const handleRetry = () => {
     setSelectedOption(null)
@@ -65,7 +131,10 @@ export default function ChapterPage() {
     setIsValid(false)
     setCompletedSteps((prev) => {
       const updated = { ...prev }
-      delete updated[step]
+      if (updated[step]) {
+        delete updated[step].answer
+        delete updated[step].valid
+      }
       return updated
     })
   }
@@ -87,6 +156,10 @@ export default function ChapterPage() {
     )
     setIsValid(isAccepted)
     if (isAccepted) setExpPoints((prev) => prev + 1)
+    setCompletedSteps((prev) => ({
+      ...prev,
+      [step]: { ...prev[step], answer: input, valid: isAccepted }
+    }))
   }
 
   const handleNext = () => {
@@ -105,46 +178,13 @@ export default function ChapterPage() {
     }
   }
 
-  const useHint = () => {
-    if (expPoints >= 1 && questionData?.hint) {
-      setFeedback(`🧙‍♂️ Hint: ${questionData.hint}`)
-      setExpPoints((prev) => prev - 1)
-      setShowMerchant(false)
-    }
-  }
-
-  const eliminateTwoOptions = () => {
-    if (expPoints >= 3 && questionData) {
-      const incorrects = questionData.options.map((_, i) => i).filter(i => i !== questionData.correct)
-      const toEliminate = incorrects.sort(() => 0.5 - Math.random()).slice(0, 2)
-      setEliminatedOptions(toEliminate)
-      setExpPoints((prev) => prev - 3)
-      setShowMerchant(false)
-    }
-  }
-
-  const revealAnswer = () => {
-    if (expPoints >= 5 && step < 6) {
-      setSelectedOption(questionData.correct)
-      setFeedback("✅ The merchant whispers the answer in your ear...")
-      setIsValid(true)
-      setCompletedSteps((prev) => ({ ...prev, [step]: { answer: questionData.correct, valid: true } }))
-      setExpPoints((prev) => prev - 5)
-      setShowMerchant(false)
-    }
-  }
-
-  const spriteClass = `/assets/sprites/${selectedClass}.png`
-  const spriteBoss = `/assets/sprites/echo-warden.png`
-
   return (
     <Layout>
       <div className="text-center max-w-2xl px-4 py-12 text-green-400 font-mono">
         <h1 className="text-2xl md:text-3xl mb-4">{chapter1.name}</h1>
         {step === 6 && (
           <h2 className="text-xl md:text-2xl text-green-200 mb-8 animate-pulse">
-            ⚔️ Final Boss:
-            <br />
+            ⚔️ Final Boss:<br />
             <span className="font-bold tracking-wide uppercase">{chapter1.bossName}</span>
           </h2>
         )}
@@ -181,42 +221,47 @@ export default function ChapterPage() {
             <img src={spriteClass} alt="hero" className="w-16 h-16 mb-6 mx-auto animate-breathe" />
             <p className="mb-6 text-green-300 italic">{questionData.question}</p>
 
-            <button
-              className="mb-4 text-green-300 hover:text-yellow-300 transition animate-pulse hover:scale-105 duration-200"
-              onClick={() => setShowMerchant(!showMerchant)}
-            >
-              🧙‍♂️ <span className="underline">Need help? Visit the Magic Merchant</span>
-            </button>
+            {!completedSteps[step]?.valid && (
+              <button
+                className="mb-4 text-green-300 hover:text-yellow-300 transition animate-bounce hover:scale-105 duration-300"
+                onClick={() => setShowMerchant(!showMerchant)}
+              >
+                🧙‍♂️ <span className="underline font-bold">Need help? Visit the Magic Merchant</span>
+              </button>
+            )}
 
             {showMerchant && (
               <div className="border border-green-400 p-4 mb-6 rounded bg-black text-sm text-green-100">
                 <p className="mb-2 font-bold">Magic Merchant's Bonuses:</p>
                 <button onClick={useHint} disabled={expPoints < 1} className={`block w-full mb-2 p-2 rounded ${expPoints < 1 ? "bg-gray-800 text-gray-500" : "bg-green-800 hover:bg-green-700"}`}>🔮 Hint (1 EXP)</button>
                 <button onClick={eliminateTwoOptions} disabled={expPoints < 3} className={`block w-full mb-2 p-2 rounded ${expPoints < 3 ? "bg-gray-800 text-gray-500" : "bg-yellow-800 hover:bg-yellow-700"}`}>✂️ Eliminate 2 wrong answers (3 EXP)</button>
-                <button onClick={revealAnswer} disabled={expPoints < 5} className={`block w-full p-2 rounded ${expPoints < 5 ? "bg-gray-800 text-gray-500" : "bg-red-800 hover:bg-red-700"}`}>🗝️ Reveal correct answer (5 EXP)</button>
+                <button onClick={revealAnswer} disabled={expPoints < 5 || step === 6} className={`block w-full p-2 rounded ${expPoints < 5 || step === 6 ? "bg-gray-800 text-gray-500" : "bg-red-800 hover:bg-red-700"}`}>🗝️ Reveal correct answer (5 EXP)</button>
+                <button onClick={() => setShowMerchant(false)} className="block w-full mt-4 bg-green-700 hover:bg-green-600 text-black font-semibold py-2 rounded">👋 Goodbye, Merchant</button>
               </div>
             )}
 
-            <div className="space-y-3 mb-6">
-              {questionData.options.map((opt, idx) => (
-                <button
-                  key={idx}
-                  onClick={() => handleOptionSelect(idx)}
-                  disabled={!!completedSteps[step] || eliminatedOptions.includes(idx)}
-                  className={`block w-full border px-4 py-2 rounded ${
-                    selectedOption === idx
-                      ? idx === questionData.correct
-                        ? "bg-green-700 border-green-400"
-                        : "bg-red-700 border-red-400"
-                      : eliminatedOptions.includes(idx)
-                      ? "bg-gray-800 border-gray-500 text-gray-500 cursor-not-allowed"
-                      : "border-green-400 hover:bg-green-800"
-                  }`}
-                >
-                  {opt}
-                </button>
-              ))}
-            </div>
+            {questionData?.options?.length > 0 && (
+              <div className="space-y-3 mb-6">
+                {questionData.options.map((opt, idx) => (
+                  <button
+                    key={idx}
+                    onClick={() => handleOptionSelect(idx)}
+                    disabled={!!completedSteps[step]?.valid || eliminatedOptions.includes(idx)}
+                    className={`block w-full border px-4 py-2 rounded ${
+                      selectedOption === idx
+                        ? idx === questionData.correct
+                          ? "bg-green-700 border-green-400"
+                          : "bg-red-700 border-red-400"
+                        : eliminatedOptions.includes(idx)
+                        ? "bg-gray-800 border-gray-500 text-gray-500 cursor-not-allowed"
+                        : "border-green-400 hover:bg-green-800"
+                    }`}
+                  >
+                    {opt}
+                  </button>
+                ))}
+              </div>
+            )}
           </>
         ) : (
           <p>⚠️ Challenge not found for this step.</p>
@@ -230,9 +275,17 @@ export default function ChapterPage() {
 
         <div className="flex justify-between w-full max-w-lg mt-10 mx-auto">
           <button onClick={handleBack} className="underline text-green-400 hover:text-green-200">← Back</button>
-          {step === 6 && !isValid && feedback && (<button onClick={() => setInput("")} className="underline text-red-400 hover:text-red-200">Retry ✍️</button>)}
-          {step < 6 && !isValid && feedback && (<button onClick={handleRetry} className="underline text-red-400 hover:text-red-200">Retry 🔁</button>)}
-          {isValid && (<button onClick={handleNext} className="underline text-green-400 hover:text-green-200">{step === 6 ? "Continue your adventure →" : "Next →"}</button>)}
+          {step === 6 && !isValid && feedback && (
+            <button onClick={() => setInput("")} className="underline text-red-400 hover:text-red-200">Retry ✍️</button>
+          )}
+          {step < 6 && !isValid && feedback && (
+            <button onClick={handleRetry} className="underline text-red-400 hover:text-red-200">Retry 🔁</button>
+          )}
+          {isValid && (
+            <button onClick={handleNext} className="underline text-green-400 hover:text-green-200">
+              {step === 6 ? "Continue your adventure →" : "Next →"}
+            </button>
+          )}
         </div>
       </div>
     </Layout>

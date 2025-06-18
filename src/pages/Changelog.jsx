@@ -10,6 +10,15 @@ export default function Changelog() {
         <h1 className="text-2xl md:text-3xl text-center mb-8">📜 Changelog</h1>
 
         <div>
+          <h2 className="text-lg md:text-xl mb-2 text-green-300">🧾 Version 1.0.2 – June 2025</h2>
+          <ul className="list-disc list-inside space-y-2">
+            <li>✨ Nasconde il bottone "Magic Merchant" se la risposta è già stata data e validata</li>
+            <li>✅ Migliorato il controllo dell'accesso agli aiuti del mercante per evitare uso in step già completati</li>
+            <li>🔒 Aggiunta protezione narrativa con frase: “🧙‍♂️ The merchant knows your past and refuses to waste your energy.”</li>
+          </ul>
+        </div>
+
+        <div>
           <h2 className="text-lg md:text-xl mb-2 text-green-300">🧾 Version 1.0.1 – June 2025</h2>
           <ul className="list-disc list-inside space-y-2">
             <li>Improved boss answer validation – now accepts multiple valid formats (e.g. <code>few-shots</code>, <code>few shots</code>, etc.)</li>

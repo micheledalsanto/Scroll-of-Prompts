@@ -24,7 +24,7 @@ export default function Layout({ children }) {
             onClick={() => navigate("/changelog")}
             className="text-xs text-green-100 italic underline hover:text-green-200"
           >
-            v1.0.1
+            v1.0.2
           </button>
         </div>
       </header>
