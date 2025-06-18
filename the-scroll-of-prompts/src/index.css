@@ -1,0 +1,60 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes flicker {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}
+
+.flicker {
+  animation: flicker 1.5s infinite;
+}
+
+.scanlines::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  background-image: repeating-linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.05),
+    rgba(0, 0, 0, 0.05) 1px,
+    transparent 1px,
+    transparent 4px
+  );
+  z-index: 50;
+}
+
+@keyframes bounceFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.bounce-animation {
+  animation: bounceFloat 2s infinite ease-in-out;
+}
+
+@keyframes epic-glow {
+  0%, 100% {
+    text-shadow: 0 0 8px #00ffcc, 0 0 16px #00ffcc;
+    color: #00ffcc;
+  }
+  50% {
+    text-shadow: 0 0 12px #00ffff, 0 0 24px #00ffff;
+    color: #ffffff;
+  }
+}
+
+.epic-boss-title {
+  animation: epic-glow 2s infinite;
+}
+
+

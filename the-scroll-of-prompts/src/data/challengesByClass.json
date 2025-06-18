@@ -1,0 +1,262 @@
+{
+  "copy-knight": [
+    {
+      "question": "Which prompt is clearest for a magical recipe?",
+      "options": [
+        "Give steps",
+        "Explain everything",
+        "Step-by-step potion with ingredients",
+        "Write about magic"
+      ],
+      "correct": 2
+    },
+    {
+      "question": "In prompt alchemy, which structure helps the AI solve problems logically?",
+      "options": [
+        "Few-shot",
+        "Chain of Thought",
+        "Zero-shot",
+        "None"
+      ],
+      "correct": 1
+    },
+    {
+      "question": "To obtain more accurate responses, a prompter must:",
+      "options": [
+        "Shout loudly at the AI",
+        "Craft specific and detailed instructions",
+        "Draw a circle of power",
+        "Use vague commands"
+      ],
+      "correct": 1
+    },
+    {
+      "question": "Complete the prompt: 'Explain the purpose of a ___ in a persuasive message.'",
+      "options": [
+        "dragon",
+        "call to action",
+        "castle",
+        "scroll"
+      ],
+      "correct": 1
+    },
+    {
+      "question": "Which of these is a constraint often used in prompt crafting?",
+      "options": [
+        "Length limit",
+        "Random output",
+        "Invisibility",
+        "Fire spell"
+      ],
+      "correct": 0
+    }
+  ],
+  "wizard_of_words": [
+    {
+      "question": "What is the main benefit of providing context in a prompt?",
+      "options": [
+        "To confuse the AI",
+        "To speed up processing",
+        "To improve relevance of response",
+        "To decorate the message"
+      ],
+      "correct": 2
+    },
+    {
+      "question": "The ancient scroll reads: 'Give the AI a few examples to guide its hand.' What is this technique called?",
+      "options": [
+        "Chain of Thought",
+        "Zero-Shot",
+        "Few-Shot",
+        "One-Shot"
+      ],
+      "correct": 2
+    },
+    {
+      "question": "In prompt alchemy, which structure helps the AI solve problems logically?",
+      "options": [
+        "Few-shot",
+        "Chain of Thought",
+        "Zero-shot",
+        "None"
+      ],
+      "correct": 1
+    },
+    {
+      "question": "Complete the prompt: 'Explain the purpose of a ___ in a persuasive message.'",
+      "options": [
+        "dragon",
+        "call to action",
+        "castle",
+        "scroll"
+      ],
+      "correct": 1
+    },
+    {
+      "question": "Which of these is a constraint often used in prompt crafting?",
+      "options": [
+        "Length limit",
+        "Random output",
+        "Invisibility",
+        "Fire spell"
+      ],
+      "correct": 0
+    }
+  ],
+  "data_ranger": [
+    {
+      "question": "A wise sage once said: 'Let the AI reason step by step'. Which method is this?",
+      "options": [
+        "CoT",
+        "FoT",
+        "Few-Shot",
+        "Zero-Shot"
+      ],
+      "correct": 0
+    },
+    {
+      "question": "To obtain more accurate responses, a prompter must:",
+      "options": [
+        "Shout loudly at the AI",
+        "Craft specific and detailed instructions",
+        "Draw a circle of power",
+        "Use vague commands"
+      ],
+      "correct": 1
+    },
+    {
+      "question": "Which prompt is clearest for a magical recipe?",
+      "options": [
+        "Give steps",
+        "Explain everything",
+        "Step-by-step potion with ingredients",
+        "Write about magic"
+      ],
+      "correct": 2
+    },
+    {
+      "question": "The ancient scroll reads: 'Give the AI a few examples to guide its hand.' What is this technique called?",
+      "options": [
+        "Chain of Thought",
+        "Zero-Shot",
+        "Few-Shot",
+        "One-Shot"
+      ],
+      "correct": 2
+    },
+    {
+      "question": "In prompt alchemy, which structure helps the AI solve problems logically?",
+      "options": [
+        "Few-shot",
+        "Chain of Thought",
+        "Zero-shot",
+        "None"
+      ],
+      "correct": 1
+    }
+  ],
+  "strategic_seer": [
+    {
+      "question": "A wise sage once said: 'Let the AI reason step by step'. Which method is this?",
+      "options": [
+        "CoT",
+        "FoT",
+        "Few-Shot",
+        "Zero-Shot"
+      ],
+      "correct": 0
+    },
+    {
+      "question": "Which phrase best completes the prompt: 'Summon an image of a dragon in the style of ___'?",
+      "options": [
+        "your dreams",
+        "Renaissance painters",
+        "blue fire",
+        "unknown"
+      ],
+      "correct": 1
+    },
+    {
+      "question": "The ancient scroll reads: 'Give the AI a few examples to guide its hand.' What is this technique called?",
+      "options": [
+        "Chain of Thought",
+        "Zero-Shot",
+        "Few-Shot",
+        "One-Shot"
+      ],
+      "correct": 2
+    },
+    {
+      "question": "In prompt alchemy, which structure helps the AI solve problems logically?",
+      "options": [
+        "Few-shot",
+        "Chain of Thought",
+        "Zero-shot",
+        "None"
+      ],
+      "correct": 1
+    },
+    {
+      "question": "Which prompt is clearest for a magical recipe?",
+      "options": [
+        "Give steps",
+        "Explain everything",
+        "Step-by-step potion with ingredients",
+        "Write about magic"
+      ],
+      "correct": 2
+    }
+  ],
+  "visual_bard": [
+    {
+      "question": "Which of these is a constraint often used in prompt crafting?",
+      "options": [
+        "Length limit",
+        "Random output",
+        "Invisibility",
+        "Fire spell"
+      ],
+      "correct": 0
+    },
+    {
+      "question": "The ancient scroll reads: 'Give the AI a few examples to guide its hand.' What is this technique called?",
+      "options": [
+        "Chain of Thought",
+        "Zero-Shot",
+        "Few-Shot",
+        "One-Shot"
+      ],
+      "correct": 2
+    },
+    {
+      "question": "Which prompt is clearest for a magical recipe?",
+      "options": [
+        "Give steps",
+        "Explain everything",
+        "Step-by-step potion with ingredients",
+        "Write about magic"
+      ],
+      "correct": 2
+    },
+    {
+      "question": "Complete the prompt: 'Explain the purpose of a ___ in a persuasive message.'",
+      "options": [
+        "dragon",
+        "call to action",
+        "castle",
+        "scroll"
+      ],
+      "correct": 1
+    },
+    {
+      "question": "What is the main benefit of providing context in a prompt?",
+      "options": [
+        "To confuse the AI",
+        "To speed up processing",
+        "To improve relevance of response",
+        "To decorate the message"
+      ],
+      "correct": 2
+    }
+  ]
+}

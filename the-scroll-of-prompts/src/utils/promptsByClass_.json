@@ -1,0 +1,24 @@
+const promptsByClass = {
+  "copy-knight": {
+    "normal": [
+      "Craft a legendary tagline for a medieval merchant selling enchanted goods. Frame it as if read aloud by a bard.",
+      "Explain why a call to action is crucial for a magical scroll advertisement. Be vivid in your description.",
+      "Transform a dull town crier message into a heroic announcement. Add a humorous twist.",
+      // … aggiungi tutte le altre
+    ],
+    "boss": [
+      "Create an enchanted sales scroll that convinces travelers to visit a haunted inn. Include one metaphor or symbol.",
+      "Write a powerful slogan and description for a shop that sells invisible items. Make it suitable for a young audience.",
+      "Persuade a skeptical noble to sponsor a magical billboard campaign. Use medieval terms if possible."
+    ]
+  },
+  // … tutte le altre classi allo stesso modo (omesse qui per brevità)
+}
+
+export function getRandomPrompt(className, type = "normal") {
+  const prompts = promptsByClass[className]?.[type]
+  if (!prompts || prompts.length === 0) return "No prompt found."
+  return prompts[Math.floor(Math.random() * prompts.length)]
+}
+
+export default promptsByClass
