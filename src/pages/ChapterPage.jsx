@@ -16,6 +16,10 @@ export default function ChapterPage() {
   const [questionData, setQuestionData] = useState(null)
   const [isValid, setIsValid] = useState(false)
 
+  const getRandomChallenge = (challenges) => {
+    return challenges[Math.floor(Math.random() * challenges.length)]
+  }
+
   useEffect(() => {
     const name = localStorage.getItem("heroName")
     const cls = localStorage.getItem("selectedClass")
@@ -26,19 +30,31 @@ export default function ChapterPage() {
       const normCls = cls.toLowerCase().replace(/\s+/g, "_")
       setSelectedClass(normCls)
 
+      const allChallenges = challengesByClass[normCls]
+
       if (step < 6) {
-        const challenge = challengesByClass[normCls]?.[step - 1]
+        const challengeSet = allChallenges?.[step]
+        const challenge = Array.isArray(challengeSet) ? getRandomChallenge(challengeSet) : challengeSet
         setQuestionData(challenge)
         setInput("")
         setFeedback("")
         setSelectedOption(completedSteps[step]?.answer ?? null)
         setIsValid(completedSteps[step]?.valid ?? false)
       } else {
-        setQuestionData(null)
+        // BOSS STEP
+        const bossChallenges = allChallenges?.boss
+        const savedBoss = completedSteps[step]?.bossData
+        const bossChallenge = savedBoss || getRandomChallenge(bossChallenges)
+
+        if (!savedBoss) {
+          setCompletedSteps((prev) => ({ ...prev, [step]: { ...prev[step], bossData: bossChallenge } }))
+        }
+
+        setQuestionData(bossChallenge)
         setInput("")
         setFeedback("")
         setSelectedOption(null)
-        setIsValid(false)
+        setIsValid(completedSteps[step]?.valid ?? false)
       }
     }
   }, [navigate, step])
@@ -65,7 +81,7 @@ export default function ChapterPage() {
 
   const handleInputSubmit = () => {
     const normalized = input.toLowerCase().replace(/[^a-z]/g, "").trim()
-    const accepted = chapter1.bossAnswerAccepted.map(ans => ans.replace(/[^a-z]/g, ""))
+    const accepted = questionData?.answers?.map(ans => ans.replace(/[^a-z]/g, "")) ?? []
     const isAccepted = accepted.includes(normalized)
 
     if (input.trim().length < 5) {
@@ -79,6 +95,7 @@ export default function ChapterPage() {
         : "❌ The Echo Warden frowns. That is not the wisdom they seek."
     )
     setIsValid(isAccepted)
+    setCompletedSteps((prev) => ({ ...prev, [step]: { ...prev[step], valid: isAccepted } }))
   }
 
   const handleNext = () => {
@@ -116,13 +133,13 @@ export default function ChapterPage() {
         {step === 6 ? (
           <>
             <div className="flex items-center justify-center gap-10 mb-10">
-              <img src={spriteClass} alt="hero" className="w-24 h-24 animate-breathing origin-bottom" />
+              <img src={spriteClass} alt="hero" className="w-24 h-24 animate-breathe" />
               <img src={spriteBoss} alt="boss" className="w-24 h-24" />
             </div>
 
             <p className="mb-10 text-green-300 italic text-lg leading-relaxed animate-fade-in-slow">
               <span className="block text-green-500 text-sm uppercase tracking-wide mb-2">The Echo Warden whispers:</span>
-              <span className="text-green-100 font-semibold italic">"{chapter1.bossQuestion}"</span>
+              <span className="text-green-100 font-semibold italic">"{questionData?.question}"</span>
             </p>
 
             <textarea
@@ -141,7 +158,7 @@ export default function ChapterPage() {
           </>
         ) : questionData ? (
           <>
-            <img src={spriteClass} alt="hero" className="w-16 h-16 mb-6 mx-auto animate-breathing origin-bottom" />
+            <img src={spriteClass} alt="hero" className="w-16 h-16 mb-6 mx-auto animate-breathe" />
             <p className="mb-6 text-green-300 italic">{questionData.question}</p>
             <div className="space-y-3 mb-6">
               {questionData.options.map((opt, idx) => (
