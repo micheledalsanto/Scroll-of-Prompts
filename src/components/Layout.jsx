@@ -36,7 +36,7 @@ export default function Layout({ children }) {
       <footer className="px-4 py-2 bg-green-900 text-xs text-green-200 text-center mt-10">
         © {new Date().getFullYear()}{" "}
         <a
-          href="https://github.com/micheledalsanto/Scroll-of-Prompt"
+          href="https://github.com/micheledalsanto/Scroll-of-Prompts"
           target="_blank"
           rel="noopener noreferrer"
           className="underline hover:text-green-100"
