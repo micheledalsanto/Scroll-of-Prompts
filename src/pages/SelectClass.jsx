@@ -13,8 +13,8 @@ const classes = [
     id: "code-mage",
     name: "Code Mage",
     icon: "🧠",
-    description: "🔒 The runes of code are still being forged. Return when the circuits hum with magic…",
-    available: false,
+    description: "Harnesses the arcane art of structured logic and magical code prompts",
+    available: true,
   },
   {
     id: "knowledge-seeker",

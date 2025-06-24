@@ -10,6 +10,17 @@ export default function Changelog() {
         <h1 className="text-2xl md:text-3xl text-center mb-8">📜 Changelog</h1>
 
         <div>
+          <h2 className="text-lg md:text-xl mb-2 text-green-300">🧾 Version 1.0.3 – June 2025</h2>
+          <ul className="list-disc list-inside space-y-2">
+            <li>🧠 Sbloccata la nuova classe <strong>Code Mage</strong> – mago del codice e dell’ingegneria del prompt</li>
+            <li>💻 Sfide ripensate per sviluppatori: include concetti tecnici, linguaggi come Python, SQL, JavaScript</li>
+            <li>⚡ Domande del boss aggiornate: risposte secche, con validazione multipla intelligente (es: "json", "JSON format")</li>
+            <li>🎮 Nuova sprite retro del Code Mage e del boss Echo Warden con design techno-arcano</li>
+            <li>🧩 Migliorata la coerenza tra struttura delle domande, opzioni e validazione per risposte tecniche</li>
+          </ul>
+        </div>
+
+        <div>
           <h2 className="text-lg md:text-xl mb-2 text-green-300">🧾 Version 1.0.2 – June 2025</h2>
           <ul className="list-disc list-inside space-y-2">
             <li>✨ Nasconde il bottone "Magic Merchant" se la risposta è già stata data e validata</li>

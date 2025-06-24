@@ -204,5 +204,197 @@
         "answers": ["brief", "creative brief", "prompt brief", "copy brief"]
       }
     ]
-  }
+  },
+  "code-mage": {
+  "1": [
+    {
+      "question": "What is the best way to instruct an LLM to generate Python code with comments?",
+      "options": [
+        "Ask for 'minimal code'",
+        "Use: 'Write commented Python code...'",
+        "Say: 'Output Python script only'",
+        "Request pseudocode first"
+      ],
+      "correct": 1,
+      "hint": "Be explicit about language and expectations."
+    },
+    {
+      "question": "Which language benefits most from using chain-of-thought prompting?",
+      "options": [
+        "Python",
+        "SQL",
+        "Bash",
+        "All of the above"
+      ],
+      "correct": 3,
+      "hint": "Reasoning helps in any structured logic."
+    },
+    {
+      "question": "You want to generate secure password handling in JavaScript. What keyword should your prompt include?",
+      "options": [
+        "eval",
+        "async",
+        "crypto",
+        "document.write"
+      ],
+      "correct": 2,
+      "hint": "Security often begins with the right library."
+    }
+  ],
+  "2": [
+    {
+      "question": "How can you reduce hallucinations in code outputs?",
+      "options": [
+        "Avoid specifying the language",
+        "Use precise function signatures",
+        "Rely on model defaults",
+        "Include vague tasks"
+      ],
+      "correct": 1,
+      "hint": "Clarity of input improves truth of output."
+    },
+    {
+      "question": "What is a good way to enforce SQL safety in a prompt?",
+      "options": [
+        "Request raw string interpolation",
+        "Use 'parameterized query' in prompt",
+        "Mention 'fast results'",
+        "Add 'no logging'"
+      ],
+      "correct": 1,
+      "hint": "Avoid injections with the right wording."
+    },
+    {
+      "question": "You want a shell script that logs errors to a file. Which prompt works best?",
+      "options": [
+        "Generate a Bash script",
+        "Write a shell command with comments",
+        "Create a Bash script that logs errors to error.log",
+        "List shell syntax"
+      ],
+      "correct": 2,
+      "hint": "Outputs improve when the file target and behavior are included."
+    }
+  ],
+  "3": [
+    {
+      "question": "Which prompt instruction improves code readability?",
+      "options": [
+        "Add inline comments and consistent indentation",
+        "Remove all comments",
+        "Use compact one-liners",
+        "Prioritize minification"
+      ],
+      "correct": 0,
+      "hint": "Readable code is maintainable code."
+    },
+    {
+      "question": "You want to debug a recursive function. What should the prompt ask for?",
+      "options": [
+        "Return expected output",
+        "Explain the base and recursive cases",
+        "Replace recursion with loops",
+        "Test with one case"
+      ],
+      "correct": 1,
+      "hint": "Understanding logic is better than guessing output."
+    },
+    {
+      "question": "How do you ask the model to avoid using deprecated libraries?",
+      "options": [
+        "Specify the language version",
+        "Say 'modern syntax'",
+        "Trust the model",
+        "Use 'old-school code'"
+      ],
+      "correct": 0,
+      "hint": "Context versioning is key."
+    }
+  ],
+  "4": [
+    {
+      "question": "To instruct the model to explain a regex, the prompt must...",
+      "options": [
+        "Say: 'Visualize this'",
+        "Include the regex and request plain language explanation",
+        "Use only the pattern",
+        "Avoid examples"
+      ],
+      "correct": 1,
+      "hint": "Even arcane symbols reveal their meaning when asked nicely."
+    },
+    {
+      "question": "Which prompt gets a model to benchmark two sorting algorithms?",
+      "options": [
+        "Explain bubble sort",
+        "Compare quicksort and mergesort with time complexity",
+        "Show one example of sorting",
+        "Print a list"
+      ],
+      "correct": 1,
+      "hint": "Comparison + performance = benchmarking."
+    },
+    {
+      "question": "To summarize a codebase, a prompt should include...",
+      "options": [
+        "Just the repo name",
+        "All file paths",
+        "The full directory tree and a summary request",
+        "Only README.md"
+      ],
+      "correct": 2,
+      "hint": "Structure matters as much as content."
+    }
+  ],
+  "5": [
+    {
+      "question": "What is the ideal format for a prompt to generate unit tests?",
+      "options": [
+        "List expected behaviors and function signature",
+        "Only write 'add unit tests'",
+        "Say 'make test'",
+        "Ask for test.js"
+      ],
+      "correct": 0,
+      "hint": "Behavior drives testing."
+    },
+    {
+      "question": "To ensure the code is reusable, your prompt should ask for...",
+      "options": [
+        "Copy-paste examples",
+        "A single monolithic script",
+        "Modular design and function reuse",
+        "Hardcoded values"
+      ],
+      "correct": 2,
+      "hint": "Modularity is a spell of sustainability."
+    },
+    {
+      "question": "How do you guide the AI to follow PEP8 in Python code?",
+      "options": [
+        "Say 'use conventions'",
+        "Mention 'Python best practices'",
+        "Request compliance with PEP8",
+        "No need — the model knows"
+      ],
+      "correct": 2,
+      "hint": "Standards should be spoken, not assumed."
+    }
+  ],
+  "boss": [
+    {
+      "question": "What prompt engineering technique involves giving the model step-by-step reasoning before answering?",
+      "answers": ["chain of thought", "chain-of-thought", "CoT"]
+    },
+    {
+      "question": "Which keyword ensures reproducibility when generating AI-based outputs?",
+      "answers": ["seed", "random seed", "fixed seed"]
+    },
+    {
+      "question": "Which output format is most reliable for structured AI-generated data?",
+      "answers": ["json", "JSON", "json format", "JSON format"]
+    }
+  ]
 }
+}
+
